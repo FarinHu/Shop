@@ -40,11 +40,18 @@ public class login extends JFrame {
     private void loginmethod(ActionEvent e){
         String username = usernamesq.getText();
         String password = passwordsq.getText();
-        //if ()
-        //    else if ()
-        //else{
-          JOptionPane.showMessageDialog(this, "Login Failed .");
+        if(people.People.containsKey(username)){
+            if((people.People.get(username)).equals(password)){
+                //safe asli
+            }
+            else
+                JOptionPane.showMessageDialog(this,"Please Enter The Password Correctly");
+
+        }
+        else{
+            JOptionPane.showMessageDialog(this,"This Username Is Not Registered");
+        }
         }
 
 
-    }
+}

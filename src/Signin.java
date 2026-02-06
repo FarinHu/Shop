@@ -22,8 +22,20 @@ public class Signin extends JFrame{
         Registerb.addActionListener((ActionEvent e) -> {
            String newUser = usernamesq.getText();
            String newPass = passwordsq.getText();
-           JOptionPane.showMessageDialog(this , "Account Successfully Created.");
-           this.dispose();
+           if(newPass.isEmpty()){
+               JOptionPane.showMessageDialog(this ,"Please Enter Your Password");
+           return;
+           }
+           if(people.People.containsKey(newUser)){
+               JOptionPane.showMessageDialog(this,"This Username Is Taken");
+               return;
+           }
+           else{
+               people.People.put(newUser , newPass);
+               JOptionPane.showMessageDialog(this,"You Have Been Registered Successfully");
+               this.dispose();
+           }
+
         });
         add(panel);
     }
