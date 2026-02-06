@@ -1,7 +1,7 @@
 import javax.swing.*;
 
-public class ThecShop extends JFrame {
-    public ThecShop(){
+public class TheaShop extends JFrame {
+    public TheaShop(){
         setTitle("Shop");
         setSize(400 , 600);
         setLocationRelativeTo(null);

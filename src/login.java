@@ -37,21 +37,26 @@ public class login extends JFrame {
     }
 
 
-    private void loginmethod(ActionEvent e){
+    private void loginmethod(ActionEvent e) {
         String username = usernamesq.getText();
         String password = passwordsq.getText();
-        if(people.People.containsKey(username)){
-            if((people.People.get(username)).equals(password)){
-                //safe asli
+        if (people.People.containsKey(username)) {
+            if (username.equals("Admin")) {
+                if ((people.People.get(username)).equals(password)) {
+                    TheaShop shopa = new TheaShop();
+                    shopa.setVisible(true);
+                }
             }
-            else
-                JOptionPane.showMessageDialog(this,"Please Enter The Password Correctly");
-
-        }
-        else{
-            JOptionPane.showMessageDialog(this,"This Username Is Not Registered");
-        }
-        }
 
 
+            if ((people.People.get(username)).equals(password)) {
+                ThecShop shopc = new ThecShop();
+                shopc.setVisible(true);
+            } else
+                JOptionPane.showMessageDialog(this, "Please Enter The Password Correctly");
+
+        } else {
+            JOptionPane.showMessageDialog(this, "This Username Is Not Registered");
+        }
+    }
 }

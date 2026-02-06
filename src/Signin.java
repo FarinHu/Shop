@@ -32,6 +32,7 @@ public class Signin extends JFrame{
            }
            else{
                people.People.put(newUser , newPass);
+               people.addUser();
                JOptionPane.showMessageDialog(this,"You Have Been Registered Successfully");
                this.dispose();
            }
