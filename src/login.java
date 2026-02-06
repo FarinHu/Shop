@@ -1,7 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 
 public class login extends JFrame {
@@ -22,20 +21,22 @@ public class login extends JFrame {
         panel.add(passwordsq);
 
         JButton loginb = new JButton("Login");
-        JButton signb = new JButton("Sign In");
+        loginb.setFocusable(false);
+        JButton signb = new JButton("New User?");
+        signb.setFocusable(false);
         panel.add(new JLabel());
         panel.add(new JLabel());
         panel.add(signb);
         panel.add(loginb);
         loginb.addActionListener(e -> loginmethod(e));
-    //    signb.addActionListener(e -> {
-        //    Signin signing = new Signin();
-           // signing.setVisible(true);
-         //       }
+        signb.addActionListener(e -> {
+            Signin signing = new Signin();
+            signing.setVisible(true);
+                });
         add(panel);
     }
 
-    
+
     private void loginmethod(ActionEvent e){
         String username = usernamesq.getText();
         String password = passwordsq.getText();
